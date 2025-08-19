@@ -29,8 +29,8 @@ base64_image = encode_image("./assets/intro.jpeg")
     model="qwen-vl-max",
     # model="qwen-plus",
     # model="qwen2-vl-7b-instruct'''
-model_name = "qwen2.5-vl-3b-instruct"  # 可以修改为其他模型
-# model_name = "qwen-vl-max"
+# model_name = "qwen2.5-vl-32b-instruct"  # 可以修改为其他模型
+model_name = "qwen-vl-max"
 
 
 client = OpenAI(
@@ -48,7 +48,7 @@ completion = client.chat.completions.create(
     messages=[
         {
             "role": "system",
-            "content": [{"type": "text", "text": "你是一名图片理解助手，擅长识别文字图片的主要内容并进行模块化层级输出。需先判断图片核心元素类别（如包含图表、文字板块等），再提取各核心元素下的关键信息，按 “核心元素类别” 为一级，关键信息为二级的层级形式输出。"}]},
+            "content": [{"type": "text", "text": "你是一名图片理解助手，擅长识别文字图片的主要内容并进行模块化层级输出。需先判断图片核心元素类别（如包含图表、文字板块等），再提取各核心元素下的关键信息，按 “核心元素类别” 为一级，关键信息为二级的层级形式输出。无需对原始内容过度解读，只需要按层级输出原始内容即可。"}]},
         {
             "role": "user",
             "content": [
