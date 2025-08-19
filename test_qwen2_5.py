@@ -17,18 +17,21 @@ def encode_image(image_path):
         return base64.b64encode(image_file.read()).decode("utf-8")
 
 # 将xxxx/eagle.png替换为你本地图像的绝对路径
+# base64_image = encode_image("./assets/intro43kb.png")
 base64_image = encode_image("./assets/intro.jpeg")
-# base64_image = encode_image("./assets/text.jpg")
 
-# 选择要使用的模型
+# 选择要使用的模型,可按需更换模型名称。模型列表：https://help.aliyun.com/zh/model-studio/models
 '''model="qwen2.5-vl-3b-instruct",
     # model="qwen2.5-vl-7b-instruct",
     # model="qwen2.5-vl-32b-instruct",
     # model="qwen2.5-vl-72b-instruct",
     # model="qwen-vl-plus",
+    model="qwen-vl-max",
     # model="qwen-plus",
     # model="qwen2-vl-7b-instruct'''
 model_name = "qwen2.5-vl-3b-instruct"  # 可以修改为其他模型
+# model_name = "qwen-vl-max"
+
 
 client = OpenAI(
     # 若没有配置环境变量，请用百炼API Key将下行替换为：api_key="sk-xxx"
@@ -37,20 +40,15 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-    # 此处以qwen-vl-max-latest为例，可按需更换模型名称。模型列表：https://help.aliyun.com/zh/model-studio/models
-    # model="qwen2.5-vl-3b-instruct",
-    # model="qwen2.5-vl-7b-instruct",
-    # model="qwen2.5-vl-32b-instruct",
-    # model="qwen2.5-vl-72b-instruct",
-    # model="qwen-vl-plus",
-    # model="qwen-plus",
+    
+  
     model=model_name,
-    # model="qwen2-vl-7b-instruct",
+   
 
     messages=[
         {
             "role": "system",
-            "content": [{"type": "text", "text": "请准确输出这张图片里的所有原始文字与数字内容及对层级信息进行解析"}]},
+            "content": [{"type": "text", "text": "你是一名图片理解助手，擅长识别文字图片的主要内容并进行模块化层级输出。需先判断图片核心元素类别（如包含图表、文字板块等），再提取各核心元素下的关键信息，按 “核心元素类别” 为一级，关键信息为二级的层级形式输出。"}]},
         {
             "role": "user",
             "content": [
@@ -64,7 +62,7 @@ completion = client.chat.completions.create(
                     "image_url": {"url": f"data:image/jpeg;base64,{base64_image}"},
                 },
                 # {"type": "text", "text": "请准确识别这张图片里的所有原始文字与数字内容及图片中层级关系进行解析"},qwen2.5-vl
-                {"type": "text", "text": "描述张张图片中的所有信息"},
+                {"type": "text", "text": "描述这张图片中"},
                 
             ],
         }
@@ -76,7 +74,7 @@ end_time = time.time()
 elapsed_time = end_time - start_time
 
 # 生成包含模型名称和时间的文件名
-filename = f"{model_name}_{elapsed_time:.2f}s.txt"
+filename = f"{model_name}_{elapsed_time:.2f}s_{datetime.now().strftime('%H%M%S')}.txt"
 
 with open(filename, "w", encoding="utf-8") as f:
     f.write(completion.choices[0].message.content)
