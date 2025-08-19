@@ -28,7 +28,7 @@ base64_image = encode_image("./assets/intro.jpeg")
     # model="qwen-vl-plus",
     # model="qwen-plus",
     # model="qwen2-vl-7b-instruct'''
-model_name = "qwen-vl-max"  # 可以修改为其他模型
+model_name = "qwen2.5-vl-3b-instruct"  # 可以修改为其他模型
 
 client = OpenAI(
     # 若没有配置环境变量，请用百炼API Key将下行替换为：api_key="sk-xxx"
@@ -83,4 +83,3 @@ with open(filename, "w", encoding="utf-8") as f:
 
 print(f"理解完毕，耗时：{elapsed_time:.2f}秒")
 print(f"结果已保存到：{filename}")
-print("理解完毕")
