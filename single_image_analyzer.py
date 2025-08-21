@@ -2,6 +2,7 @@ import base64
 import os
 import time
 from datetime import datetime
+
 from dotenv import load_dotenv
 from openai import OpenAI
 
@@ -54,7 +55,7 @@ def analyze_single_image(image_path, model_name, client):
         messages=[
             {
                 "role": "system",
-                "content": [{"type": "text", "text": "你是一名图片理解助手，擅长识别文字图片的主要内容并进行模块化层级输出。需先判断图片模块内容（如包含图表、文字板块等），再提取各模块下的关键信息，按 “核心元素类别” 为一级，关键信息为二级的层级形式输出。无需对原始内容过度解读，只需要按层级输出原始内容即可。"}]
+                "content": [{"type": "text", "text": "你是一名图片理解助手，擅长识别文字图片的主要内容并进行以json格式按模块化层级输出。需先判断图片模块内容（如包含图表、文字板块等），再提取各模块下的关键信息，按 “核心元素类别” 为一级，关键信息为二级的层级形式输出。无需对原始内容过度解读，只需要按层级输出原始内容即可。"}]
             },
             {
                 "role": "user",
@@ -70,8 +71,8 @@ def analyze_single_image(image_path, model_name, client):
 image_paths = get_image_files()
 
 # 模型类型
-# model_name = "qwen-vl-max"
-model_name = "qwen2.5-vl-3b-instruct"
+model_name = "qwen-vl-max"
+# model_name = "qwen2.5-vl-3b-instruct"
 
 # 创建客户端
 client = OpenAI(
