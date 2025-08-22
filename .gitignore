@@ -1,3 +1,7 @@
 .env
 *.txt
+*.json
 assets/
+*_output/
+.vscode/
+*.yaml
