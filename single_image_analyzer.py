@@ -2,12 +2,18 @@ import base64
 import json
 import os
 import time
+import yaml
 from datetime import datetime
 
 from dotenv import load_dotenv
 from openai import OpenAI
 
 load_dotenv()
+
+
+def load_prompt(file_path="prompt.yaml"):
+    with open(file_path, "r", encoding="utf-8") as f:
+        return yaml.safe_load(f)
 
 
 def encode_image(image_path):
@@ -56,7 +62,7 @@ def analyze_single_image(image_path, model_name, client):
         messages=[
             {
                 "role": "system",
-                "content": [{"type": "text", "text": "你是一名图片理解专家，需精准识别图片里的内容模块，接着以树状层级结构的 JSON 格式输出。要严格按照 “主要模块→子模块→子类别→元素” 这样的树状层级来组织内容，保证每个元素都能追溯到其所属的上级模块。所有层级都得有明确的命名，像模块名称、子模块名称、类别名称等，不能使用匿名结构。数组只用来存储同一层级的并列元素，比如子模块列表、元素列表。必须保证 JSON 格式完全正确，能直接解析，数组里的元素用字符串表示。另外，要忠实地反映图片原始内容的层级关系，不添加额外的解读，只进行结构化整理。"}]
+                "content": [{"type": "text", "text": system_prompt}]
             },
             {
                 "role": "user",
@@ -70,10 +76,12 @@ def analyze_single_image(image_path, model_name, client):
 
 # 获取所有图片
 image_paths = get_image_files()
+system_prompt = load_prompt()["system_prompt"]
+
 
 # 模型类型
-# model_name = "qwen-vl-max"
-model_name = "qwen2.5-vl-3b-instruct"
+model_name = "qwen-vl-max"
+# model_name = "qwen2.5-vl-3b-instruct"
 
 # 创建客户端
 client = OpenAI(
