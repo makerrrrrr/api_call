@@ -1,0 +1,118 @@
+{
+  "modules": [
+    {
+      "module_name": {
+        "text": "板块二",
+        "source": "original"
+      },
+      "elements": [
+        {
+          "text": "品牌营销推广",
+          "source": "original"
+        }
+      ],
+      "sub_modules": [
+        {
+          "module_name": {
+            "text": "品牌体系搭建",
+            "source": "original"
+          },
+          "elements": [
+            {
+              "text": "品宣创意",
+              "source": "original"
+            },
+            {
+              "text": "品牌升级",
+              "source": "original"
+            },
+            {
+              "text": "品牌策略",
+              "source": "original"
+            },
+            {
+              "text": "产品设计",
+              "source": "original"
+            },
+            {
+              "text": "视觉体系",
+              "source": "original"
+            }
+          ],
+          "sub_modules": []
+        },
+        {
+          "module_name": {
+            "text": "线上",
+            "source": "original"
+          },
+          "elements": [
+            {
+              "text": "新媒体矩阵运营",
+              "source": "original"
+            },
+            {
+              "text": "电商运营/平台链接",
+              "source": "original"
+            },
+            {
+              "text": "推广投放",
+              "source": "original"
+            },
+            {
+              "text": "私域体系",
+              "source": "original"
+            },
+            {
+              "text": "直播推广",
+              "source": "original"
+            }
+          ],
+          "sub_modules": []
+        },
+        {
+          "module_name": {
+            "text": "线下",
+            "source": "original"
+          },
+          "elements": [
+            {
+              "text": "展会活动",
+              "source": "original"
+            },
+            {
+              "text": "线下体验",
+              "source": "original"
+            },
+            {
+              "text": "销售转化",
+              "source": "original"
+            },
+            {
+              "text": "互动活动",
+              "source": "original"
+            },
+            {
+              "text": "户外广告",
+              "source": "original"
+            }
+          ],
+          "sub_modules": []
+        },
+        {
+          "module_name": {
+            "text": "描述",
+            "source": "generated"
+          },
+          "elements": [
+            {
+              "text": "通过”互联网+“手段帮助客户与消费者及供应链建立重要桥梁，推动企业进行数字化转型，通过线上线下整合发力联动营销，实现品牌多维增长。",
+              "source": "original"
+            }
+          ],
+          "sub_modules": []
+        }
+      ]
+    }
+  ]
+}

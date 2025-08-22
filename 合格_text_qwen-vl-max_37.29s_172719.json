@@ -1,0 +1,218 @@
+{
+  "modules": [
+    {
+      "module_name": {
+        "text": "物联网应用平台",
+        "source": "original"
+      },
+      "elements": [
+        {
+          "text": "解决终端与应用的协议开发难度大/周期长的问题",
+          "source": "original"
+        },
+        {
+          "text": "OneNET提供多协议适配，SDK支持，并向应用开发企业提供丰富多样的API接口和轻应用生成",
+          "source": "original"
+        }
+      ],
+      "sub_modules": [
+        {
+          "module_name": {
+            "text": "物联网行业终端设备",
+            "source": "generated"
+          },
+          "elements": [],
+          "sub_modules": [
+            {
+              "module_name": {
+                "text": "智能家居终端",
+                "source": "original"
+              },
+              "elements": [],
+              "sub_modules": []
+            },
+            {
+              "module_name": {
+                "text": "能源行业终端",
+                "source": "original"
+              },
+              "elements": [],
+              "sub_modules": []
+            },
+            {
+              "module_name": {
+                "text": "穿戴设备",
+                "source": "original"
+              },
+              "elements": [],
+              "sub_modules": []
+            },
+            {
+              "module_name": {
+                "text": "车载设备",
+                "source": "original"
+              },
+              "elements": [],
+              "sub_modules": []
+            },
+            {
+              "module_name": {
+                "text": "环保行业终端",
+                "source": "original"
+              },
+              "elements": [],
+              "sub_modules": []
+            },
+            {
+              "module_name": {
+                "text": "工控行业终端",
+                "source": "original"
+              },
+              "elements": [],
+              "sub_modules": []
+            }
+          ]
+        },
+        {
+          "module_name": {
+            "text": "协议",
+            "source": "generated"
+          },
+          "elements": [],
+          "sub_modules": [
+            {
+              "module_name": {
+                "text": "HTTP协议",
+                "source": "original"
+              },
+              "elements": [],
+              "sub_modules": []
+            },
+            {
+              "module_name": {
+                "text": "JT/T808协议",
+                "source": "original"
+              },
+              "elements": [],
+              "sub_modules": []
+            },
+            {
+              "module_name": {
+                "text": "MQTT协议",
+                "source": "original"
+              },
+              "elements": [],
+              "sub_modules": []
+            },
+            {
+              "module_name": {
+                "text": "MODBUS协议",
+                "source": "original"
+              },
+              "elements": [],
+              "sub_modules": []
+            },
+            {
+              "module_name": {
+                "text": "EDP协议",
+                "source": "original"
+              },
+              "elements": [],
+              "sub_modules": []
+            }
+          ]
+        },
+        {
+          "module_name": {
+            "text": "应用终端",
+            "source": "generated"
+          },
+          "elements": [],
+          "sub_modules": [
+            {
+              "module_name": {
+                "text": "手机",
+                "source": "original"
+              },
+              "elements": [],
+              "sub_modules": []
+            },
+            {
+              "module_name": {
+                "text": "平板",
+                "source": "original"
+              },
+              "elements": [],
+              "sub_modules": []
+            },
+            {
+              "module_name": {
+                "text": "PC",
+                "source": "original"
+              },
+              "elements": [],
+              "sub_modules": []
+            },
+            {
+              "module_name": {
+                "text": "导视屏",
+                "source": "original"
+              },
+              "elements": [],
+              "sub_modules": []
+            }
+          ]
+        },
+        {
+          "module_name": {
+            "text": "编程语言",
+            "source": "generated"
+          },
+          "elements": [],
+          "sub_modules": [
+            {
+              "module_name": {
+                "text": "C",
+                "source": "original"
+              },
+              "elements": [],
+              "sub_modules": []
+            },
+            {
+              "module_name": {
+                "text": "Ruby",
+                "source": "original"
+              },
+              "elements": [],
+              "sub_modules": []
+            },
+            {
+              "module_name": {
+                "text": "Object C",
+                "source": "original"
+              },
+              "elements": [],
+              "sub_modules": []
+            },
+            {
+              "module_name": {
+                "text": "Java Script",
+                "source": "original"
+              },
+              "elements": [],
+              "sub_modules": []
+            },
+            {
+              "module_name": {
+                "text": "Java",
+                "source": "original"
+              },
+              "elements": [],
+              "sub_modules": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

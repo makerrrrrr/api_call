@@ -4,6 +4,7 @@ import pdb
 import time
 from datetime import datetime
 
+import yaml
 from dotenv import load_dotenv
 from openai import OpenAI
 

@@ -1,0 +1,121 @@
+{
+  "modules": [
+    {
+      "module_name": {
+        "text": "物联网应用平台",
+        "source": "original"
+      },
+      "elements": [
+        {
+          "text": "智能家居终端",
+          "source": "original"
+        },
+        {
+          "text": "能源行业终端",
+          "source": "original"
+        },
+        {
+          "text": "穿戴设备",
+          "source": "original"
+        },
+        {
+          "text": "车载设备",
+          "source": "original"
+        },
+        {
+          "text": "环保行业终端",
+          "source": "original"
+        },
+        {
+          "text": "工控行业终端",
+          "source": "original"
+        }
+      ],
+      "sub_modules": [
+        {
+          "module_name": {
+            "text": "协议类型",
+            "source": "original"
+          },
+          "elements": [
+            {
+              "text": "HTTP协议",
+              "source": "original"
+            },
+            {
+              "text": "JT/TB08协议",
+              "source": "original"
+            },
+            {
+              "text": "MOTTT协议",
+              "source": "original"
+            },
+            {
+              "text": "MOBUS协议",
+              "source": "original"
+            },
+            {
+              "text": "EDP协议",
+              "source": "original"
+            }
+          ],
+          "sub_modules": []
+        }
+      ]
+    },
+    {
+      "module_name": {
+        "text": "不同应用开发环境",
+        "source": "original"
+      },
+      "elements": [
+        {
+          "text": "C",
+          "source": "original"
+        },
+        {
+          "text": "Ruby",
+          "source": "original"
+        },
+        {
+          "text": "Object C",
+          "source": "original"
+        },
+        {
+          "text": "Java Script",
+          "source": "original"
+        },
+        {
+          "text": "Java",
+          "source": "original"
+        }
+      ],
+      "sub_modules": []
+    },
+    {
+      "module_name": {
+        "text": "应用终端",
+        "source": "original"
+      },
+      "elements": [
+        {
+          "text": "手机",
+          "source": "original"
+        },
+        {
+          "text": "平板",
+          "source": "original"
+        },
+        {
+          "text": "PC",
+          "source": "original"
+        },
+        {
+          "text": "寻视屏",
+          "source": "original"
+        }
+      ],
+      "sub_modules": []
+    }
+  ]
+}

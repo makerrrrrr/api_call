@@ -1,0 +1,32 @@
+[
+  {
+    "module": "标题",
+    "sub_module": "第一部分",
+    "sub_category": "公司简介"
+  },
+  {
+    "module": "图表",
+    "sub_module": "运营目标",
+    "sub_category": "趋势图"
+  },
+  {
+    "element": "2018年",
+    "value": "32%"
+  },
+  {
+    "element": "2020年",
+    "value": "10%"
+  },
+  {
+    "element": "2022年",
+    "value": "40%"
+  },
+  {
+    "element": "2024年",
+    "value": "50%"
+  },
+  {
+    "element": "箭头",
+    "value": "18,000,000.00(RMB)"
+  }
+]

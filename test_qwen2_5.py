@@ -7,14 +7,13 @@ from dotenv import load_dotenv
 from openai import OpenAI
 
 load_dotenv()
-
-# 记录开始时间
-start_time = time.time()
-
 #  base 64 编码格式
+
+
 def encode_image(image_path):
     with open(image_path, "rb") as image_file:
         return base64.b64encode(image_file.read()).decode("utf-8")
+
 
 # 将xxxx/eagle.png替换为你本地图像的绝对路径
 # base64_image = encode_image("./assets/intro43kb.png")
@@ -29,10 +28,11 @@ base64_image = encode_image("./assets/intro.jpeg")
     model="qwen-vl-max",
     # model="qwen-plus",
     # model="qwen2-vl-7b-instruct'''
-# model_name = "qwen2.5-vl-32b-instruct"  # 可以修改为其他模型
-model_name = "qwen-vl-max"
+model_name = "qwen2.5-vl-32b-instruct"  # 可以修改为其他模型
+# model_name = "qwen-vl-max"
 
-
+# 记录开始时间
+start_time = time.time()
 client = OpenAI(
     # 若没有配置环境变量，请用百炼API Key将下行替换为：api_key="sk-xxx"
     api_key=os.getenv("DASHSCOPE_API_KEY"),
@@ -40,15 +40,11 @@ client = OpenAI(
 )
 
 completion = client.chat.completions.create(
-    
-  
     model=model_name,
-   
-
     messages=[
         {
             "role": "system",
-            "content": [{"type": "text", "text": "你是一名图片理解助手，擅长识别文字图片的主要内容并进行模块化层级输出。需先判断图片核心元素类别（如包含图表、文字板块等），再提取各核心元素下的关键信息，按 “核心元素类别” 为一级，关键信息为二级的层级形式输出。无需对原始内容过度解读，只需要按层级输出原始内容即可。"}]},
+            "content": [{"type": "text", "text": "你是一名图片理解助手，擅长识别文字图片的主要内容并进行模块化层级输出。需先判断图片模块内容（如包含图表、文字板块等），再提取各模块下的关键信息，按 “核心元素类别” 为一级，关键信息为二级的层级形式输出。无需对原始内容过度解读，只需要按层级输出原始内容即可。"}]},
         {
             "role": "user",
             "content": [
@@ -61,9 +57,10 @@ completion = client.chat.completions.create(
                     # "image_url": {"url": f"data:image/jpeg;base64,{base64_image}"},
                     "image_url": {"url": f"data:image/jpeg;base64,{base64_image}"},
                 },
+
                 # {"type": "text", "text": "请准确识别这张图片里的所有原始文字与数字内容及图片中层级关系进行解析"},qwen2.5-vl
-                {"type": "text", "text": "描述这张图片中"},
-                
+                {"type": "text", "text": "描述这张图片中的信息"},
+
             ],
         }
     ],

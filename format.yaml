@@ -1,0 +1,7 @@
+modules (模块列表)       - 根节点 
+├── module_name (模块名称)           - 节点标题
+├── elements (该模块下的直接元素)     —  节点内容
+└── sub_modules (该模块下的子模块)    - 子节点列表
+    ├── module_name (子模块名称)     - 子节点标题
+    ├── elements (子模块下的元素)     - 子节点内容
+    └── sub_modules (更深层子模块)    -  递归嵌套
